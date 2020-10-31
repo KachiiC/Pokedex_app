@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
+// CSS
+import "./index.css"
+// Components
 import {useForm} from 'react-hook-form'
+import TestDex from '../../TestDex'
 
 const Pokedex = () => {
 
@@ -33,15 +37,23 @@ const Pokedex = () => {
 
     return (
         <>
-            <h1> Pokedex Form </h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input id="inputName" name="pokemonName" ref={register} placeholder="Enter Pokemon name or nubmer" />
-            </form>
-            <div>
-                <img src={pokeImage} alt="pokedex-pokemon"/>
-                <h1>{pokeData.name}</h1>
-                <h6>Pokemon #: {pokeData.id}</h6>
+            <h1>Search for a pokemon!</h1>
+            <div className="pokedex-submit-form">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input 
+                        className="pokedex-search"
+                        id="inputName" 
+                        name="pokemonName" 
+                        ref={register} placeholder="Enter Pokemon name or number" 
+                    />
+                </form>
             </div>
+            <TestDex image={pokeImage} 
+                name={pokeData.name}
+
+                height={pokeData.height}
+                weight={pokeData.weight}
+            />
         </>
     )
 }
