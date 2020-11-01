@@ -16,6 +16,8 @@ const Pokedex = () => {
         {
             "name": "",
             "id": "",
+            "height": "",
+            "weight": "",
             "types": [{
                 "type": {
                         "name": "",
@@ -44,8 +46,10 @@ const Pokedex = () => {
     const pokemonTypes = pokeData.types.map(
         pokemon => pokemon.type.name.replace(/^\w/, (c) => c.toUpperCase())).join(", ")
 
-    
+    const pokemonHeight = pokeData.height * 0.1
+    const pokemonWeight = pokeData.weight * 0.1 
 
+    
     return (
         <>
             <h1>Search for a pokemon!</h1>
@@ -62,8 +66,8 @@ const Pokedex = () => {
             <PokedexContainer image={pokeImage} 
                 name={pokemonName}
                 type={pokemonTypes}
-                height={pokeData.height}
-                weight={pokeData.weight}
+                height={pokemonHeight.toFixed(1)}
+                weight={pokemonWeight.toFixed(1)}
             />
         </>
     )

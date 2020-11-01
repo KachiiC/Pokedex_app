@@ -63,8 +63,8 @@ const PokedexContainer = (props) => (
             <div id="stats">
                 <h4>Name: {props.name}</h4><br/>
                 <h4>Type: {props.type}</h4><br/>
-                <h4>Height: {props.height}</h4><br/>
-                <h4>Weight: {props.weight} </h4>
+                <h4>Height: {props.height}M</h4><br/>
+                <h4>Weight: {props.weight} kg</h4>
                 <br/>
             </div>
             <div id="blueButtons1">
