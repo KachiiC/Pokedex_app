@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-const PokedexImage = (props) => (
+const PokedexContainer = (props) => (
 
     <div id="pokedex">
         <div id="left">
@@ -95,4 +95,4 @@ const PokedexImage = (props) => (
     </div>
 )
 
-export default PokedexImage
+export default PokedexContainer

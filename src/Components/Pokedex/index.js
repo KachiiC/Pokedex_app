@@ -3,13 +3,15 @@ import React, { useEffect, useState } from 'react'
 import "./index.css"
 // Components
 import {useForm} from 'react-hook-form'
-import TestDex from '../../TestDex'
+import PokedexContainer from '../PokedexContainer'
+import Pokeball from './pokeball.jpg'
 
 const Pokedex = () => {
 
     const {register, handleSubmit} = useForm();
-    const [pokeCode, setPokeCode] = useState("")
-    const [pokeImage, setPokeImage] = useState("")
+    const [pokeCode, setPokeCode] = useState({
+})
+    const [pokeImage, setPokeImage] = useState(Pokeball)
     const [pokeData, setPokeData] = useState(
         {
             "name": "",
@@ -33,7 +35,7 @@ const Pokedex = () => {
 
     },[pokeCode])
 
-    console.log(pokeData)
+    const pokemonName = pokeData.name.replace(/^\w/, (c) => c.toUpperCase())
 
     return (
         <>
@@ -48,9 +50,9 @@ const Pokedex = () => {
                     />
                 </form>
             </div>
-            <TestDex image={pokeImage} 
-                name={pokeData.name}
-
+            <PokedexContainer image={pokeImage} 
+                name={pokemonName}
+                type="?"
                 height={pokeData.height}
                 weight={pokeData.weight}
             />
