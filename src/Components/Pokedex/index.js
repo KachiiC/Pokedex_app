@@ -15,7 +15,12 @@ const Pokedex = () => {
     const [pokeData, setPokeData] = useState(
         {
             "name": "",
-            "id": ""
+            "id": "",
+            "types": [{
+                "type": {
+                        "name": "",
+                }
+            }]
         }
     )
 
@@ -36,6 +41,10 @@ const Pokedex = () => {
     },[pokeCode])
 
     const pokemonName = pokeData.name.replace(/^\w/, (c) => c.toUpperCase())
+    const pokemonTypes = pokeData.types.map(
+        pokemon => pokemon.type.name.replace(/^\w/, (c) => c.toUpperCase())).join(", ")
+
+    
 
     return (
         <>
@@ -52,7 +61,7 @@ const Pokedex = () => {
             </div>
             <PokedexContainer image={pokeImage} 
                 name={pokemonName}
-                type="?"
+                type={pokemonTypes}
                 height={pokeData.height}
                 weight={pokeData.weight}
             />
